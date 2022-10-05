@@ -1,0 +1,25 @@
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: 500px;
+    background: url("/public/images/img1.png") no-repeat;
+    background-position: center;
+    background-size:cover;
+}
+.content h1{
+    margin: 140px 250px 0 0 ;
+    color: white;
+    font-size: 3em;
+    font-weight: 500;
+    line-height: 80px;
+}
+.content a{
+    margin: 20px 480px 0 0 ;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    line-height: 20px;
+    text-transform: uppercase;
+}
