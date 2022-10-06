@@ -4,6 +4,7 @@ const Card = ({img}) => {
   return (
     <div className="card" >
       <img src={`/images/${img}`}/>
+      <div>New</div>
       <p>Pueraria Mirifica And Study Phyto Estrogens</p>
       <span>$599.00</span>
     </div>

@@ -1,0 +1,39 @@
+.matter-content{
+    box-sizing: border-box;
+    padding: 0 170px;
+    display: flex;
+    justify-content: flex-end;
+    /* flex-wrap: wrap; */
+    align-items: center;
+    gap:30px;
+}
+/* section{
+    width:500px;
+    height: 380px;
+} */
+.matter-content img{
+    width:500px;
+    height:400px;
+}
+.matter-content div{
+    display: flex;
+    height: 430px;
+    width:450px;
+    flex-direction: column;
+
+}
+.matter-content div p:first-child
+{
+    margin-top:0;
+    font-weight: 600;
+    line-height: 2em;
+}
+.matter-content p:not(:first-child){
+    font-size:12px;
+    text-transform: uppercase;
+}
+.matter-content li{
+    font-weight:500;
+    list-style: none;
+    line-height: 1.5em;
+}

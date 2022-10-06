@@ -1,12 +1,14 @@
 import React from 'react'
 import './style.css'
 import Card from '../Card'
-const Gallary = ({cards}) => {
+import Video from '../../Video'
+const Gallary = ({cards,isCard}) => {
+  console.log("isCard",isCard);
   return (
     <div className='Gallary'>
         {
             cards.map((card) =>(
-                <Card img={card}/>
+                isCard ? <Card img={card}/> : <Video vid={card}/>
             ))
         }
     </div>

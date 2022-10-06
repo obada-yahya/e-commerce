@@ -1,7 +1,8 @@
 .Gallary{
+    background-color:#FCFCFC;
     margin:auto;
-    width: 90%;
+    padding: 0px 100px;
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content:space-between;
 }
