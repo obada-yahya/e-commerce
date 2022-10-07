@@ -6,6 +6,7 @@ import HeaderIntro from './components/HeaderIntro';
 import Title from './components/SharedComponents/Title'
 import Gallary from './components/SharedComponents/Gallary';
 import MatterInfo from './components/MatterInfo';
+import Footer from './components/Footer';
 const cardsFeatured = ["img14.png","img2.png","img3.png","img10.png","img4.png","img6.png","img7.png","img8.png"]
 const cardsShop = ["img11.png","img9.png","img12.png","img13.png"]
 const videos = ["rec1.png","rec2.png","rec3.png"]
@@ -27,7 +28,7 @@ function App() {
     <div class="align" >
       <img src='/images/asseenon.png'/>
     </div>
-    
+    <Footer/>
     </>
   );
 }

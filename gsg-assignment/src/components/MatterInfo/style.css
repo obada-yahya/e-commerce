@@ -1,11 +1,12 @@
 .matter-content{
     box-sizing: border-box;
-    padding: 0 170px;
+    padding: 0 100px;
     display: flex;
     justify-content:center;
-    flex-wrap: wrap;
     align-items: center;
+    flex-wrap: wrap;
     gap:30px;
+    margin-bottom: 100px;
 }
 .matter-content img{
     width:522px;
