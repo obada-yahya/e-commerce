@@ -7,8 +7,8 @@ const Gallary = ({cards,isCard}) => {
   return (
     <div className='Gallary'>
         {
-            cards.map((card) =>(
-                isCard ? <Card img={card}/> : <Video vid={card}/>
+            cards.map((card,idx) =>(
+                isCard ? <Card key={card} img={card}/> : <Video key={card}vid={card}/>
             ))
         }
     </div>

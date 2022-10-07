@@ -23,6 +23,11 @@ function App() {
     <Gallary cards={cardsShop} isCard={true}/>
     <Title Text={"Recommended Videos"}/>
     <Gallary cards={videos} isCard={false}/>
+    <Title Text={"As Seen on"}/>
+    <div class="align" >
+      <img src='/images/asseenon.png'/>
+    </div>
+    
     </>
   );
 }
