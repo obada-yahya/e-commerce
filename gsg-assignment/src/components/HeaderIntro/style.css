@@ -8,14 +8,17 @@
     background-size:cover;
 }
 .content h1{
-    margin: 140px 250px 0 0 ;
+    margin: 140px 154px 0 0 ;
     color: white;
     font-size: 3em;
     font-weight: 500;
     line-height: 80px;
 }
 .content a{
-    margin: 20px 480px 0 0 ;
+    text-decoration: none;
+    border-bottom:1px solid white;
+    padding-bottom:8px;
+    margin: 20px 380px 0 0;
     color: white;
     font-size: 12px;
     font-weight: 700;

@@ -4,10 +4,10 @@ const Footer = () => {
   return (
     <div className='footer'>
       <div className='grid-container'>
-        <div className='grid-item'>Categories</div>
-        <div className='grid-item'>Partners </div>
-        <div className='grid-item'>Contact us</div>
-        <div className='grid-item'>Subscribe to newsletter</div>
+        <div className='grid-item bold'>Categories</div>
+        <div className='grid-item bold'>Partners </div>
+        <div className='grid-item bold'>Contact us</div>
+        <div className='grid-item bold'>Subscribe to newsletter</div>
         <div className='grid-item'>
           <div className='flex-container'>
             <li>About us</li>
@@ -37,9 +37,11 @@ const Footer = () => {
           <form className='form'>
             <input placeholder='ENTER YOUR EMAIL'></input>
             <button>Subscribe</button>
+            <div className='icons'><img src={'/icons/Facebook.svg'}/> <img src={'/icons/Twitter Icon.svg'}/></div>
           </form>
         </div>
       </div>
+      <div className='copyrights'>© Copyright Matter PTE LTD  2017</div>
     </div>
   )
 }

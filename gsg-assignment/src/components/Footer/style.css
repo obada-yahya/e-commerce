@@ -1,7 +1,7 @@
 .footer{
     background-color:#33333A;
     margin-top: 50px;
-    height: 320px;
+    height: 420px;
 }
 
 .grid-container{
@@ -40,12 +40,15 @@
     visibility: hidden;
 }
 .form input{
-    width: 60%;
+    width: 65%;
     background-color:#33333A;
     color:white;
     border:0.5px solid #666666;
     padding:10px 0px 10px 10px;
     margin-right:20px;
+}
+.form input::placeholder{
+    color:white;
 }
 .form button{
     border:none;
@@ -53,4 +56,20 @@
     text-transform: uppercase;
     background-color:white;
     padding:10px 40px;
+}
+.bold{
+    font-weight: 800;
+}
+.icons img{
+    margin:20px 5px 0 0;
+}
+.flex-container li{
+    font-size:13px;
+}
+
+.copyrights{
+    display: flex;
+    justify-content: center;
+    color:#DEDEDE;
+    font-size: 14px;
 }

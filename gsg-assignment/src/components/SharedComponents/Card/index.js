@@ -1,12 +1,21 @@
 import React from 'react'
 import './style.css'
-const Card = ({img}) => {
+const Card = ({card,isNew,isShop}) => {
   return (
     <div className="card" >
-      <img src={`/images/${img}`}/>
-      <div>New</div>
-      <p>Pueraria Mirifica And Study Phyto Estrogens</p>
-      <span>$599.00</span>
+      <img src={`/images/${card.imgPath}`}/>
+      {
+        isNew == true ? <div className='new-icon'>New</div>: <></>
+      }
+      <img className="middle-img" src={'/ButtonImages/Button/Primary/M.png'}/>
+      {card.category ? <div className='category'>{card.category}</div> : <></>}
+      {
+        !isShop ?
+        <>
+          <p>Pueraria Mirifica And Study Phyto Estrogens</p>
+          <span>$599.00</span>
+        </>: <></>
+      }
     </div>
   )
 }
