@@ -1,7 +1,3 @@
-.align{
-    display: flex;
-    justify-content: center;
-}
 body{
     scroll-behavior: smooth;
     margin:0;

@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import AdBar from './components/AdBar';
 import NavBar from './components/NavBar';
@@ -7,7 +6,9 @@ import Title from './components/SharedComponents/Title'
 import Gallary from './components/SharedComponents/Gallary';
 import MatterInfo from './components/MatterInfo';
 import Footer from './components/Footer';
-
+import GridExplore from './components/GridExplore';
+import Button from './components/SharedComponents/Button';
+import Sponsors from './components/Sponsors';
 const cardsFeatured = [
 {imgPath:"img14.png",isNew:true},
 {imgPath:"img2.png",isNew:true},
@@ -35,17 +36,18 @@ function App() {
     <Title Text={"About Matter"}/>
     <MatterInfo/>
     
-    <Title Text={"Explor"}/>
+    <Title Text={"Explore"}/>
+    <GridExplore/>
+    <Button text={"see the journal"}/>
 
     <Title Text={"Shop"}/>
     <Gallary cards={cardsShop} isCard={true} isShop={true}/>
     
     <Title Text={"Recommended Videos"}/>
     <Gallary cards={videos} isCard={false}/>
+    <Button text={"show more"}/>
     <Title Text={"As Seen on"}/>
-    <div class="align" >
-      <img src='/images/asseenon.png'/>
-    </div>
+    <Sponsors/>
     <Footer/>
     </>
   );

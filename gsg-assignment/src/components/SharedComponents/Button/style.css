@@ -1,0 +1,11 @@
+.button-design{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 100px;
+}
+.button-design button{
+    background-color: #33333A;
+    color:white;
+    padding: 10px 20px;
+    text-transform: uppercase;
+}
