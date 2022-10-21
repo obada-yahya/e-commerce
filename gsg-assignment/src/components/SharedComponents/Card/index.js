@@ -1,13 +1,13 @@
 import React from 'react'
 import './style.css'
-const Card = ({card,isNew,isShop}) => {
+const Card = ({card,isNew,isShop,func}) => {
   return (
     <div className="card" >
       <img src={`/images/${card.imgPath}`}/>
       {
         isNew == true ? <div className='new-icon'>New</div>: <></>
       }
-      <img className="middle-img" src={'/ButtonImages/Button/Primary/M.png'}/>
+      <img onClick={()=>func()} className="middle-img" src={'/ButtonImages/Button/Primary/M.png'}/>
       {card.category ? <div className='category'>{card.category}</div> : <></>}
       {
         !isShop ?
