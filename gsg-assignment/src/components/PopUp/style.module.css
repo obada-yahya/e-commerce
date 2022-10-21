@@ -1,0 +1,153 @@
+.popupBox {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  background-color: #999;
+  font-weight: 500;
+}
+.box {
+  position: relative;
+  width: 70%;
+  min-height: 300px;
+  background-color: white;
+  border: 1px solid #999;
+  margin: 50px auto;
+  padding: 20px;
+  overflow: auto;
+}
+.btnClose {
+  cursor: pointer;
+  border-radius: 50%;
+  position: fixed;
+  right: calc(15%);
+  top: 65px;
+  border: none;
+  background-color: white;
+  font-size: 30px;
+  opacity: 0.8;
+}
+.info {
+  display: flex;
+  gap: 20px;
+  width: 100%;
+  height: 80vh;
+  margin-top: 20px;
+  /* background-color:red; */
+}
+.imageContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.imageContainer img {
+  width: 50px;
+  height: 50px;
+}
+.mainImage img {
+  width: 458px;
+  height: 90%;
+}
+.imgDescription {
+  flex-grow: 1;
+}
+.imgDescription h1 {
+  margin: 0 auto;
+}
+.imgDescription header {
+  font-size: 20px;
+  line-height: 2em;
+}
+.imgDescription > div {
+  border-bottom: 1px solid black;
+  padding-bottom: 10px;
+}
+.price {
+  color: #ff6008;
+  font-weight: 700;
+  font-size: 25px;
+}
+.flexSpaceBetween {
+  display: flex;
+  justify-content: space-between;
+}
+.rating i {
+  color: #ff6008;
+}
+.imgDescription .description {
+  padding-bottom: 20px;
+}
+.test {
+  padding: 15px 0;
+  display: grid;
+  grid-template-columns: 50% 50%;
+}
+.test div:nth-child(2) {
+  opacity: 0.8;
+  color: #666666;
+}
+
+.imgDescription .sizeContainer {
+  border: none;
+  margin-top: 20px;
+  opacity: 0.7;
+}
+.sizeContainer div:first-child{
+  margin-bottom:10px;
+}
+.buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.centerSizes{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.centerSizes div:last-child{
+  text-transform: uppercase;
+}
+.purchaseContainer{
+  display: flex;
+  margin-top:10px;
+}
+
+.numberContainer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    width: 50px;
+    height: 40px;
+    background-color: white;
+    border: 1px solid #DEDEDE;
+    font-size:15px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.incBtn{
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: static;
+  width: 40px;
+  height: 40px;
+  background-color: #DEDEDE;
+  border: 1px solid #DEDEDE;
+  font-size:30px;
+  text-align: center;
+  box-sizing: border-box;
+}
+.buttonContent{
+  background-color: #33333A;
+  color:white;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  margin-left:20px;
+  cursor: pointer;
+}

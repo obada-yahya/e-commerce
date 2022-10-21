@@ -1,9 +1,9 @@
-.button-design{
+.buttonDesign{
     display: flex;
     justify-content: center;
     margin-bottom: 100px;
 }
-.button-design button{
+.buttonContent{
     background-color: #33333A;
     color:white;
     padding: 10px 20px;

@@ -1,0 +1,14 @@
+.box{
+    cursor: pointer;
+    position: static;
+    width: 50px;
+    height: 40px;
+    background-color: white;
+    border:1px solid #DEDEDE;
+    text-align:center;
+    box-sizing: border-box;
+}
+.isActive{
+    background-color:#DEDEDE;;
+    transition: all 0.6s ease;
+}

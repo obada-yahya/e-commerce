@@ -1,4 +1,5 @@
 import './App.css';
+import { useState } from 'react';
 import AdBar from './components/AdBar';
 import NavBar from './components/NavBar';
 import HeaderIntro from './components/HeaderIntro';
@@ -9,6 +10,8 @@ import Footer from './components/Footer';
 import GridExplore from './components/GridExplore';
 import Button from './components/SharedComponents/Button';
 import Sponsors from './components/Sponsors';
+import PopUp from './components/PopUp';
+import products from './productsData'
 const cardsFeatured = [
 {imgPath:"img14.png",isNew:true},
 {imgPath:"img2.png",isNew:true},
@@ -25,14 +28,23 @@ const cardsShop = [
   {imgPath:"img13.png",isNew:false,category:"Accessories"}
 ]
 const videos = ["rec1.png","rec2.png","rec3.png"]
+
 function App() {
+  const [open,setToggle] = useState(false);  
+  const openToggle = (e) =>{
+    setToggle(!open);
+  }
   return (
-    <>    
+    <div className>    
     <AdBar/>
     <NavBar/>
     <HeaderIntro/>
+    <button onClick={openToggle}>Click me to open the PopUp</button>
+    {
+      open && <PopUp closeFunc={openToggle} product={products[0]}/>
+    }
     <Title Text={"Featured"}/>
-    <Gallary cards={cardsFeatured} isCard={true} isShop={false}/>
+    <Gallary ary cards={cardsFeatured} isCard={true} isShop={false}/>
     <Title Text={"About Matter"}/>
     <MatterInfo/>
     
@@ -49,7 +61,7 @@ function App() {
     <Title Text={"As Seen on"}/>
     <Sponsors/>
     <Footer/>
-    </>
+    </div>
   );
 }
 
