@@ -1,0 +1,30 @@
+.filterWrapper{
+    /* background-color:red; */
+    width:250px;
+    padding-left:150px;
+    margin-top:30px;
+}
+
+
+.listOfFilters{
+    padding-top:20px;
+    border-top: 1px solid grey;
+    border-bottom: 1px solid grey;
+}
+
+.filterWrapper > div:first-child{
+    margin-bottom:20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.filterWrapper > div > button{
+    border:none;
+    background-color: transparent;
+    color:#FF6008;
+    font-weight:bold;
+}
+.filterWrapper div > button:hover{
+    cursor:pointer;
+}

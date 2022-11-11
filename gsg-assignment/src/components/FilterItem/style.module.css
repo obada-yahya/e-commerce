@@ -1,0 +1,42 @@
+.triangle_down1 {
+    margin-top:5px;
+    position: relative;
+    top: -5px;
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-right: 0.2em solid #000;
+    border-top: 0.2em solid #000;
+    transform: rotate(135deg);
+    margin-right: 0.5em;
+    margin-left: 1.0em;
+  }
+.triangle_up1 {
+    margin-top:5px; 
+    position: relative;
+    top: -5px;
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-right: 0.2em solid #000;
+    border-top: 0.2em solid #000;
+    transform: rotate(-45deg);
+    margin-right: 0.5em;
+    margin-left: 1.0em;
+}
+
+.filterItem{
+    width:230px;
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    margin-bottom:20px;
+}
+.filterItem:hover{
+    cursor: pointer;
+}
+.filterItem div:first-child{
+    font-size:1.5em;
+}

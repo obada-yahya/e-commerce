@@ -1,0 +1,20 @@
+.sizeContainer > div:first-child{
+    margin-bottom:10px;
+    margin-top:20px;
+  }
+.buttons {
+  display: flex;
+  gap: 10px;
+  margin-bottom:15px;
+}
+
+.centerSizes{
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+}
+.centerSizes div:last-child{
+  text-transform: uppercase;
+
+}
+

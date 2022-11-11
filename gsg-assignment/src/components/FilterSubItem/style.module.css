@@ -1,0 +1,27 @@
+.triangle_right {
+    margin-top:10px; 
+    position: relative;
+    top: -5px;
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 5px;
+    border-right: 0.2em solid black;
+    border-top: 0.2em solid black;
+    transform: rotate(45deg);
+    margin-right: 0.5em;
+    margin-left: 1.0em;
+}
+.subItem{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 230px;
+    margin-bottom:20px;
+}
+.subItem div:last-child{
+    margin-left:5px;
+    color:#33333A;
+    font-size:14px;
+    text-transform: uppercase;
+}
