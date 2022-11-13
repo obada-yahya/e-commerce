@@ -1,11 +1,8 @@
 .filterWrapper{
     /* background-color:red; */
     width:250px;
-    padding-left:150px;
-    margin-top:30px;
+    
 }
-
-
 .listOfFilters{
     padding-top:20px;
     border-top: 1px solid grey;
@@ -27,4 +24,11 @@
 }
 .filterWrapper div > button:hover{
     cursor:pointer;
+}
+
+.mainWrapper{
+    padding: 0 150px;
+    margin-top:30px;
+    display: flex;
+    flex-direction: row;
 }

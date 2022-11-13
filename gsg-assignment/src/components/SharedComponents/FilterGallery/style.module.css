@@ -1,0 +1,8 @@
+.Gallery{
+    background-color:#FCFCFC;
+    display: flex;
+    flex-wrap: wrap;
+    gap:30px;
+    padding-left:100px;
+    margin-bottom:60px;
+}
