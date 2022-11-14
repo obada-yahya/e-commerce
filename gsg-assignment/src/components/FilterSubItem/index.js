@@ -1,13 +1,12 @@
 import React from 'react'
 import style from "./style.module.css";
-const FilterSubItem = (props) => {
+const FilterSubItem = ({text,func}) => {
   return (
-    <>
-    <section className={style.subItem}>
+    <button onClick={(e)=>func(e,text)} className={style.subItem}>
         <div className={style.triangle_right}></div>
-        <div>{props.text}</div>
-    </section>
-    </>
+        <div>{text}</div>
+        {/* <button >Click me</button> */}
+    </button>
   )
 }
 

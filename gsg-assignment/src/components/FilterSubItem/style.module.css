@@ -13,11 +13,14 @@
     margin-left: 1.0em;
 }
 .subItem{
+    border:unset;
+    background-color: transparent;
     display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 230px;
     margin-bottom:20px;
+    cursor:pointer;
 }
 .subItem div:last-child{
     margin-left:5px;
