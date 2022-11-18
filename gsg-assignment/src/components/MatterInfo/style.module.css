@@ -1,4 +1,4 @@
-.matter-content{
+.matterContent{
     box-sizing: border-box;
     padding: 0 100px;
     display: flex;
@@ -8,28 +8,27 @@
     gap:30px;
     margin-bottom: 100px;
 }
-.matter-content img{
+.matterContent img{
     width:522px;
     height:400px;
 }
-.matter-content div{
+.matterContent div{
     display: flex;
     height: 430px;
     width:450px;
     flex-direction: column;
-    /* overflow: auto; */
 }
-.matter-content div p:first-child
+.matterContent div p:first-child
 {
     margin-top:0;
     font-weight: 600;
     line-height: 2em;
 }
-.matter-content p:not(:first-child){
+.matterContent p:not(:first-child){
     font-size:12px;
     text-transform: uppercase;
 }
-.matter-content li{
+.matterContent li{
     font-weight:500;
     list-style: none;
     line-height: 1.5em;

@@ -12,20 +12,20 @@ import Sponsors from "../../components/Sponsors";
 import PopUp from "../../components/PopUp";
 import products from "../../productsData";
 const cardsFeatured = [
-  { imgPath: "img14.png", isNew: true },
-  { imgPath: "img2.png", isNew: true },
-  { imgPath: "img3.png", isNew: true },
-  { imgPath: "img.png", isNew: false },
-  { imgPath: "img4.png", isNew: true },
-  { imgPath: "img6.png", isNew: false },
-  { imgPath: "img7.png", isNew: true },
-  { imgPath: "img8.png", isNew: false },
+  { imgPath: "img14.png", isNew: true, "assets":true},
+  { imgPath: "img2.png", isNew: true, "assets":true },
+  { imgPath: "img3.png", isNew: true, "assets":true },
+  { imgPath: "img.png", isNew: false, "assets":true },
+  { imgPath: "img4.png", isNew: true, "assets":true },
+  { imgPath: "img6.png", isNew: false, "assets":true },
+  { imgPath: "img7.png", isNew: true, "assets":true },
+  { imgPath: "img8.png", isNew: false, "assets":true},
 ];
 const cardsShop = [
-  { imgPath: "img11.png", isNew: false, category: "Pants" },
-  { imgPath: "img9.png", isNew: false, category: "Jumpsuits" },
-  { imgPath: "img12.png", isNew: false, category: "Tops" },
-  { imgPath: "img13.png", isNew: false, category: "Accessories" },
+  { imgPath: "img11.png", isNew: false, category: "Pants", "assets":true},
+  { imgPath: "img9.png", isNew: false, category: "Jumpsuits", "assets":true},
+  { imgPath: "img12.png", isNew: false, category: "Tops" , "assets":true},
+  { imgPath: "img13.png", isNew: false, category: "Accessories", "assets":true},
 ];
 const videos = ["rec1.png", "rec2.png", "rec3.png"];
 

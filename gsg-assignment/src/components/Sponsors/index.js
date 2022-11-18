@@ -1,8 +1,8 @@
 import React from 'react'
-import './style.css'
+import style from './style.module.css'
 const Sponsors = () => {
   return (
-    <div class="align">
+    <div class={style.align}>
         <img src={'/images/asseenon.png'}/>
     </div>
   )

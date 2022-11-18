@@ -1,8 +1,8 @@
-import "./style.css"
+import style from "./style.module.css"
 
 const Title = ({Text})=>{
     return(
-        <div className="center-text">{Text}</div>
+        <div className={style.centerText}>{Text}</div>
     );
 }
 

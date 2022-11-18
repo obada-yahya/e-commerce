@@ -1,8 +1,8 @@
 import React from 'react'
-import './style.css'
+import style from './style.module.css'
 const MatterIntro = () => {
   return (
-    <div className='matter-content'>
+    <div className={style.matterContent}>
         <section>
         <img src={'images/img16.png'}/>
         </section>

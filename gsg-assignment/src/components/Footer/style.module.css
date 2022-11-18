@@ -4,7 +4,7 @@
     height: 420px;
 }
 
-.grid-container{
+.gridContainer{
     display: grid;;
     padding:50px 100px;
     word-wrap: break-word;
@@ -14,20 +14,20 @@
     grid-template-columns: repeat(6,16%);
     grid-template-rows: auto auto;
 }
-.grid-container .grid-item{
+.gridContainer .gridItem{
     color:white;
     /* background-color: red;
     border: 1px solid yellow; */
 }
-.grid-item:last-child{
+.gridItem:last-child{
     grid-column:span 3;
 }
 
-.grid-item:nth-child(4){
+.gridItem:nth-child(4){
     grid-column: span 3;
 }
 
-.flex-container{
+.flexContainer{
     display: flex;
     flex-direction: column;
 }

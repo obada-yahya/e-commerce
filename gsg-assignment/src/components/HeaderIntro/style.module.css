@@ -1,4 +1,4 @@
-.content{
+.Content{
     display: flex;
     flex-direction: column;
     align-items: flex-end;
@@ -7,14 +7,14 @@
     background-position: center;
     background-size:cover;
 }
-.content h1{
+.Content h1{
     margin: 140px 154px 0 0 ;
     color: white;
     font-size: 3em;
     font-weight: 500;
     line-height: 80px;
 }
-.content a{
+.Content a{
     text-decoration: none;
     border-bottom:1px solid white;
     padding-bottom:8px;

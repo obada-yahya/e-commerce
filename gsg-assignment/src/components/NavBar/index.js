@@ -1,16 +1,16 @@
 import React from 'react'
-import "./style.css"
+import style from "./style.module.css"
 const NavBar = () => {
   return (
-    <nav className='navigation'>
-        <div className='features-items'>
+    <nav className={style.navigation}>
+        <div className={style.featuresItems}>
             <h1>matter</h1>
-            <a href='#'>shop</a>
+            <a href='/shop'>shop</a>
             <a href='#'>fabric</a>
             <a href='#'>journal</a>
             <a href='#'>about</a>
         </div>
-        <div className='login-items'>
+        <div className={style.loginItems}>
             <a href='#'>login</a>
             <i className="fa-solid fa-magnifying-glass"></i>
             <i className="fa-regular fa-heart"></i>

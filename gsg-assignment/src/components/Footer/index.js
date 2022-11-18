@@ -1,15 +1,15 @@
 import React from 'react'
-import './style.css'
+import style from './style.module.css'
 const Footer = () => {
   return (
-    <div className='footer'>
-      <div className='grid-container'>
-        <div className='grid-item bold'>Categories</div>
-        <div className='grid-item bold'>Partners </div>
-        <div className='grid-item bold'>Contact us</div>
-        <div className='grid-item bold'>Subscribe to newsletter</div>
-        <div className='grid-item'>
-          <div className='flex-container'>
+    <div className={style.footer}>
+      <div className={style.gridContainer}>
+        <div className={`${style.gridItem} ${style.bold}`}>Categories</div>
+        <div className={`${style.gridItem} ${style.bold}`}>Partners </div>
+        <div className={`${style.gridItem} ${style.bold}`}>Contact us</div>
+        <div className={`${style.gridItem} ${style.bold}`}>Subscribe to newsletter</div>
+        <div className={`${style.gridItem}`}>
+          <div className={style.flexContainer}>
             <li>About us</li>
             <li>Testimonials</li>
             <li>Contact</li> 
@@ -17,31 +17,31 @@ const Footer = () => {
             <li>Privacy Policy</li>
           </div>
         </div>
-        <div className='grid-item'>
-          <div className='flex-container'>
+        <div className={style.gridItem}>
+          <div className={style.flexContainer}>
               <li>Support</li>
               <li>Shipping & Returns</li>
               <li>Size Guide</li>
               <li>Product Care</li>
           </div>
         </div>
-        <div className='grid-item'>
-          <div className='flex-container'>
+        <div className={style.gridItem}>
+          <div className={style.flexContainer}>
               <li>26A Pagoda St, TANGS,</li>
               <li>Singapore, 058187</li>
-              <li className='hide'>d</li>
+              <li className={style.hide}>d</li>
               <li>+65 6221 5462</li>
           </div>
         </div>
-        <div className='grid-item'>
-          <form className='form'>
+        <div className={style.gridItem}>
+          <form className={style.form}>
             <input placeholder='ENTER YOUR EMAIL'></input>
             <button>Subscribe</button>
-            <div className='icons'><img src={'/icons/Facebook.svg'}/> <img src={'/icons/Twitter Icon.svg'}/></div>
+            <div className={style.icons}><img src={'/icons/Facebook.svg'}/> <img src={'/icons/Twitter Icon.svg'}/></div>
           </form>
         </div>
       </div>
-      <div className='copyrights'>© Copyright Matter PTE LTD  2017</div>
+      <div className={style.copyrights}>© Copyright Matter PTE LTD  2017</div>
     </div>
   )
 }

@@ -1,6 +1,5 @@
 .card{
     position:relative;
-    /* box-sizing: border-box; */
     padding-right:30px;
     height: 300px;
     width: 200px;
@@ -21,7 +20,7 @@
     font-weight: 600;
     overflow:auto
 }
-.new-icon{
+.newIcon{
     position: absolute;
     left:5px;
     bottom: 270px;
@@ -30,7 +29,7 @@
     background-color: #f15b03;
 
 }
-.card .middle-img{
+.card .middleImg{
     opacity: 0;
     position: absolute;
     left:30px;
@@ -41,7 +40,7 @@
 .card:hover{
     outline: 1em solid white;
 }
-.card:hover .middle-img{
+.card:hover .middleImg{
     opacity: 1;
 }
 .card:hover img{
