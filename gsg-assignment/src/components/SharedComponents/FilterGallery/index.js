@@ -6,9 +6,9 @@ const Gallery = ({cards,isShop}) => {
   return (
     <div className={style.Gallery}>
         {
-            cards.map((card,idx) =>(
+            cards ? cards.map((card,idx) =>(
                 <Card key={idx} card={card} isNew={card.isNew} isShop={isShop}/>
-            ))
+            )):<></>
         }
     </div>
   )

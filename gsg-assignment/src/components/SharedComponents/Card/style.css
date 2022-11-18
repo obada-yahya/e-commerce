@@ -12,6 +12,7 @@
 
 .card img{
     height: 100%;
+    width:100%;
     margin: 0;
     transition: all 0.7s ease;
 } 

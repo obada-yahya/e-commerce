@@ -12,9 +12,9 @@ const NavBar = () => {
         </div>
         <div className='login-items'>
             <a href='#'>login</a>
-            <i class="fa-solid fa-magnifying-glass"></i>
-            <i class="fa-regular fa-heart"></i>
-            <i class="fa-solid fa-bag-shopping"></i>
+            <i className="fa-solid fa-magnifying-glass"></i>
+            <i className="fa-regular fa-heart"></i>
+            <i className="fa-solid fa-bag-shopping"></i>
         </div>
     </nav>
   )

@@ -3,7 +3,8 @@ import './style.css'
 const Card = ({card,isNew,isShop,func}) => {
   return (
     <div className="card" >
-      <img src={`/images/${card.imgPath}`}/>
+      {/* <img src={`/images/${card.imgPath}`}/> */}
+      <img src={`${card.imgPath}`}/>
       {
         isNew == true ? <div className='new-icon'>New</div>: <></>
       }

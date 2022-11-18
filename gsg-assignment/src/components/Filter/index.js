@@ -4,7 +4,7 @@ import FilterItem from "../FilterItem";
 import FilterSubItem from '../FilterSubItem';
 import ActiveButtons from "../ActiveButtons";
 import FilterGallery from "../SharedComponents/FilterGallery";
-const cardsFeatured = [
+const myData = [
   { imgPath: "img14.png", isNew: true,category :"Pants"},
   { imgPath: "img2.png", isNew: true ,category :"JumpSuits"},
   { imgPath: "img3.png", isNew: true ,category :"SHORTS"},
@@ -19,14 +19,25 @@ const cardsFeatured = [
 const filters = [{'header':"Apparels","subItems":["pants","Jumpsuits","Shorts","Tops"]},{'header':"Accessories","subItems":["pants","Jumpsuits","Shorts","Tops"]},{'header':"Houseware"},{'header':"Others"},{'header':"Techniques"},{'header':"Styles"}];
 const Filter = () => {
   const [filterSelected, setFilterSelected] = useState(null);
-  const [filteredCards,setFilteredCards] = useState(cardsFeatured);
+  const [filteredCards,setFilteredCards] = useState([]);
+  const [cardsFeatured,setCardsFeatured] = useState([]);
+
+  const formatData = (json)=>{
+    const clearData = json.map((card)=>(
+      {"imgPath":card.image,"isNew":false,"category":card.category} 
+     ));
+    return clearData;
+  }
   useEffect(()=>{
-    // console.log("the filter selected is ", filterSelected)
+    fetch('https://api.npoint.io/f4c96afe23343d3eb102').then(res=>res.json()).then(json=>setCardsFeatured(formatData(json))); 
+  },[])
+  
+  useEffect(()=>{
     const selectedData = cardsFeatured.filter((card)=>(
       !filterSelected || card.category.toLowerCase() === filterSelected 
     ))
     setFilteredCards(selectedData);
-  },[filterSelected])
+  },[filterSelected,cardsFeatured])
 
   const restFilter = ()=>{
     setFilterSelected(null);
