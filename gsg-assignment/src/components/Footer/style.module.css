@@ -1,11 +1,11 @@
 .footer{
     background-color:#33333A;
     margin-top: 50px;
-    height: 420px;
+    min-height: 420px;
 }
 
 .gridContainer{
-    display: grid;;
+    display: grid;
     padding:50px 100px;
     word-wrap: break-word;
     row-gap: 30px;
@@ -16,8 +16,6 @@
 }
 .gridContainer .gridItem{
     color:white;
-    /* background-color: red;
-    border: 1px solid yellow; */
 }
 .gridItem:last-child{
     grid-column:span 3;
@@ -72,4 +70,13 @@
     justify-content: center;
     color:#DEDEDE;
     font-size: 14px;
+}
+
+
+@media (max-width:1000px){
+    .gridContainer{
+        padding:50px 50px;
+        display: flex;
+        flex-direction: column;
+    }
 }

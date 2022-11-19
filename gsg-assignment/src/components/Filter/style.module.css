@@ -33,3 +33,16 @@
     display: flex;
     flex-direction: row;
 }
+
+
+@media (max-width:700px){
+    .mainWrapper{
+        flex-direction: column;
+        align-items: center;
+        padding:0;
+    }
+    .filterWrapper{
+        margin-bottom:30px;
+    }
+    
+}

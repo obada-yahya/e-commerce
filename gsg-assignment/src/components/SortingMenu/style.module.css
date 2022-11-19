@@ -25,3 +25,17 @@
 .sort select{
     padding:5px 10px;
 }
+
+
+@media (max-width:700px){
+    .container{
+        padding:0 100px;
+        bottom: 12%;
+    }
+}
+@media (max-width:500px) {
+    .container{
+        padding:0 50px;
+        bottom:0;
+    }
+}
