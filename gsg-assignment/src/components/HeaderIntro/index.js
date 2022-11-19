@@ -4,7 +4,7 @@ const HeaderIntro = () => {
   return (
     <section className={style.Content}>
       <h1>Perfume Tips <br/>Tricks</h1>
-      <a href='#'>shop now</a>
+      <a href='/shop'>shop now</a>
     </section>
   )
 }

@@ -1,5 +1,6 @@
 .filterWrapper{
     /* background-color:red; */
+    position: relative;
     width:250px;
     min-width: 250px;
 }
