@@ -35,7 +35,7 @@ const HomePage = () => {
       setToggle(!open);
     };
    return (
-    <div className>
+    <div>
       <AdBar />
       <NavBar />
       <HeaderIntro />

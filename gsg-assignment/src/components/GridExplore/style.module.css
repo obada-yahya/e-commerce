@@ -42,3 +42,16 @@
 .item5 h2{
     margin-top:10px;
 }
+
+
+@media(max-width:1100px){
+    .gridContainerExplore{
+        display: flex;
+        flex-direction: column;
+    }
+}
+@media (max-width:500px) {
+    .gridContainerExplore{
+        padding:0px;
+    }
+}

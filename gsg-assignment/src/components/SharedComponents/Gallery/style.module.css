@@ -7,3 +7,8 @@
     justify-content:center;
     margin-bottom:60px;
 }
+@media(max-width:500px){
+    .Gallery{
+        padding:0px;
+    }
+}

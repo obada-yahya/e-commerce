@@ -3,7 +3,7 @@ import style from './style.module.css'
 const Video = ({vid}) => {
   return (
     <div className={style.video}>
-        <i class="fa-regular fa-circle-play"></i>
+        <i className="fa-regular fa-circle-play"></i>
         <img src={`/images/${vid}`}/>
     </div>
   )

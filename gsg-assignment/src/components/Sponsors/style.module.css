@@ -1,4 +1,8 @@
-.align{
-    display: flex;
-    justify-content: center;
+.align {
+  display: flex;
+  justify-content: center;
+}
+.align img {
+  max-width: 1000px;
+  width: 100%;
 }
