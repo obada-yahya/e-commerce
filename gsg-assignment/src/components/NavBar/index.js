@@ -4,7 +4,7 @@ const NavBar = () => {
   return (
     <nav className={style.navigation}>
         <div className={style.featuresItems}>
-            <h1>matter</h1>
+            <a href='/'>matter</a>
             <a href='/shop'>shop</a>
             <a href='#'>fabric</a>
             <a href='#'>journal</a>

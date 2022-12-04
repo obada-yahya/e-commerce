@@ -113,7 +113,7 @@ const Filter = () => {
       (card) =>
         !filterSelected || card.category.toLowerCase() === filterSelected
     );
-    if(currentOption.toLowerCase() == "nothing")
+    if(currentOption.toLowerCase() === "nothing")
     {
       setFilteredCards(selectedData);
     }
@@ -132,8 +132,9 @@ const Filter = () => {
   };
   return (
     <>
+    
+    <SortingMenu handleOptionChange={handleOptionChange} />
       <div className={style.mainWrapper}>
-        <SortingMenu handleOptionChange={handleOptionChange} />
         <section className={style.filterWrapper}>
           <div>
             <div>FILTERS</div>
