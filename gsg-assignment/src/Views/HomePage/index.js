@@ -12,14 +12,14 @@ import Sponsors from "../../components/Sponsors";
 import PopUp from "../../components/PopUp";
 import products from "../../productsData";
 const cardsFeatured = [
-  { imgPath: "img14.png", isNew: true, "assets":true},
-  { imgPath: "img2.png", isNew: true, "assets":true },
-  { imgPath: "img3.png", isNew: true, "assets":true },
-  { imgPath: "img.png", isNew: false, "assets":true },
-  { imgPath: "img4.png", isNew: true, "assets":true },
-  { imgPath: "img6.png", isNew: false, "assets":true },
-  { imgPath: "img7.png", isNew: true, "assets":true },
-  { imgPath: "img8.png", isNew: false, "assets":true},
+  { imgPath: "img14.png", isNew: true, "assets":true,price:120},
+  { imgPath: "img2.png", isNew: true, "assets":true ,price:120},
+  { imgPath: "img3.png", isNew: true, "assets":true ,price:250},
+  { imgPath: "img.png", isNew: false, "assets":true ,price:220},
+  { imgPath: "img4.png", isNew: true, "assets":true ,price:310},
+  { imgPath: "img6.png", isNew: false, "assets":true ,price:220},
+  { imgPath: "img7.png", isNew: true, "assets":true ,price:150},
+  { imgPath: "img8.png", isNew: false, "assets":true,price:180},
 ];
 const cardsShop = [
   { imgPath: "img11.png", isNew: false, category: "Pants", "assets":true},
@@ -39,7 +39,7 @@ const HomePage = () => {
       <AdBar />
       <NavBar />
       <HeaderIntro />
-      {open && <PopUp closeFunc={openToggle} product={products[0]} />}
+      {open && <PopUp closeFunc={openToggle} product={products[1]} />}
       <Title Text={"Featured"} />
       <Gallery
         ary

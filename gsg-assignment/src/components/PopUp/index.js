@@ -2,12 +2,7 @@ import React,{useState} from "react"
 import style from "./style.module.css"
 import ActiveButtons from "../ActiveButtons";
 const PopUp = ({closeFunc,product})=>{
-    // const [selectedBox,setSelectedBox] = useState(0);
     const [num,setNumber] = useState(1);
-    // const updatedBox = (e,idx)=>{
-    //     e.preventDefault();
-    //     setSelectedBox(idx);
-    // }
     const numbers = [1,2,3,4];    
     return (
         <div className={style.popupBox}>
@@ -33,11 +28,11 @@ const PopUp = ({closeFunc,product})=>{
                                 <div className={style.price}>US {product.price}</div>
                                 <div>
                                     <div className={style.rating}>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
-                                        <i class="fa-solid fa-star"></i>
+                                        <i className="fa-solid fa-star"></i>
+                                        <i className="fa-solid fa-star"></i>
+                                        <i className="fa-solid fa-star"></i>
+                                        <i className="fa-solid fa-star"></i>
+                                        <i className="fa-solid fa-star"></i>
                                         <span> {product.rating} of 5</span>
                                     </div>
                                 </div>
@@ -61,8 +56,9 @@ const PopUp = ({closeFunc,product})=>{
                         <div>{product.stock}</div>
                     </div>
                     <ActiveButtons><div>Size Guidelines</div></ActiveButtons>
-                    Quantity
+                    <h5>Quantity</h5>
                     <section className={style.purchaseContainer}>
+                        
                         <button className={style.incBtn} onClick={()=> num > 1 ? setNumber(num - 1): null}>-</button>
                         <div className={style.numberContainer}>{num}</div>
                         <button className={style.incBtn} onClick={()=>setNumber(num + 1)}>+</button>
