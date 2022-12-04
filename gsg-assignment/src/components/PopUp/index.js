@@ -64,7 +64,6 @@ const PopUp = ({ closeFunc, product }) => {
               <div>Size Guidelines</div>
             </ActiveButtons>
             <h5>Quantity</h5>
-            <button className={style.wishList}>View Full Product Details</button>
             <section className={style.purchaseContainer}>
               <button
                 className={style.incBtn}
@@ -82,7 +81,10 @@ const PopUp = ({ closeFunc, product }) => {
               <button className={style.buttonContent}>Add to cart</button>
               <button className={style.buttonContent}>Add To WishList</button>
             </section>
+            
+            <button className={`${style.wishList} ${style.buttonContent}`}>View Full Product Details</button>
           </section>
+          
         </div>
       </div>
     </div>
