@@ -11,11 +11,12 @@ const products = [
         "category": "smartphones",
         "thumbnail": "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
         "images": [
+            
+        "https://dummyjson.com/image/i/products/1/thumbnail.jpg",
         "https://dummyjson.com/image/i/products/1/1.jpg",
         "https://dummyjson.com/image/i/products/1/2.jpg",
         "https://dummyjson.com/image/i/products/1/3.jpg",
         "https://dummyjson.com/image/i/products/1/4.jpg",
-        "https://dummyjson.com/image/i/products/1/thumbnail.jpg"
         ]
     },
     {
@@ -30,10 +31,10 @@ const products = [
         "category": "smartphones",
         "thumbnail": "https://dummyjson.com/image/i/products/2/thumbnail.jpg",
         "images": [
+        "https://dummyjson.com/image/i/products/2/thumbnail.jpg",
         "https://dummyjson.com/image/i/products/2/1.jpg",
         "https://dummyjson.com/image/i/products/2/2.jpg",
         "https://dummyjson.com/image/i/products/2/3.jpg",
-        "https://dummyjson.com/image/i/products/2/thumbnail.jpg"
         ]
     },
 ]
