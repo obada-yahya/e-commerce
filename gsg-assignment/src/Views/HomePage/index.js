@@ -42,7 +42,6 @@ const HomePage = () => {
       {open && <PopUp closeFunc={openToggle} product={products[1]} />}
       <Title Text={"Featured"} />
       <Gallery
-        ary
         cards={cardsFeatured}
         func={openToggle}
         isCard={true}

@@ -157,6 +157,8 @@ h5{
 }
 
 .wishList{
+  position: relative;
+  right:50%;
   width:100%;
   margin-left:0px;
   margin-top:10px;
@@ -176,6 +178,9 @@ h5{
   }
   .imageContainer{
     flex-direction:row;
+  }
+  .wishList{
+    position: static;
   }
 }
 @media(max-width:400px){

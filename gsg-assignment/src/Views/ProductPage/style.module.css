@@ -1,0 +1,33 @@
+.pictures{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap:30px;
+}
+.pictures img{
+    width:250px;
+}
+.picturesCaptions{
+    display: flex;
+    flex-wrap:wrap;
+    gap:45px;
+    justify-content: center;
+    margin-bottom:50px;
+}
+.picturesCaptions img{
+    width:333px;
+    margin-bottom:20px;
+}
+.picturesCaptions img + div{
+    display: flex;
+    font-weight: 600;
+    justify-content: center;
+} 
+.reviewImg{
+    width:100%;
+    height: 500px;
+    background-image:url("/public/images/ReviewProduct.png");
+    background-size:cover;
+    background-attachment: fixed;
+    margin-bottom:50px;
+}
