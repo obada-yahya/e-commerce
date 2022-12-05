@@ -6,7 +6,7 @@ const NavBar = () => {
         <div className={style.featuresItems}>
             <a href='/'>matter</a>
             <a href='/shop'>shop</a>
-            <a href='#'>fabric</a>
+            <a href='/product'>fabric</a>
             <a href='#'>journal</a>
             <a href='#'>about</a>
         </div>
