@@ -47,7 +47,7 @@ const NavBar = ({ changed }) => {
           <a href="#">about</a>
         </div>
         <div className={style.loginItems}>
-          <a href="#">login</a>
+          <a href="/login">login</a>
           <i className="fa-solid fa-magnifying-glass"></i>
           <i
             className={`fa-regular fa-heart ` + style.wishlist}
