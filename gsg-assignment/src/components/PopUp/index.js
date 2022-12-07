@@ -1,9 +1,46 @@
-import React, { useState } from "react";
+import React, { useState} from "react";
 import style from "./style.module.css";
 import ActiveButtons from "../ActiveButtons";
 const PopUp = ({ closeFunc, product }) => {
   const [num, setNumber] = useState(1);
   const [selectedPicture, setSelectedPicture] = useState(product.images[0]);
+  const wishListItems = JSON.parse(localStorage.getItem("cards")) || [];
+  const check = () => {
+    for (let i = 0; i < wishListItems.length; i++) {
+      if (
+        wishListItems[i].rating +
+          wishListItems[i].title +
+          wishListItems[i].price ===
+        product.rating + product.title + product.price
+      ) {
+        return true;
+      }
+    }
+    return false;
+  };
+  const [isInWishList, setIsInWishList] = useState(check());
+  
+  const addWishListItem = (e) => {
+      wishListItems.push({
+        price: product.price,
+        title: product.title,
+        rating: product.rating,
+      });
+      localStorage.setItem("cards", JSON.stringify(wishListItems));
+      setIsInWishList(true);
+    }
+  const removeWishListItem = ()=>{
+    for(let i = 0; i < wishListItems.length; i++){
+      if (
+        wishListItems[i].rating +
+          wishListItems[i].title +
+          wishListItems[i].price ===
+        product.rating + product.title + product.price
+      ){wishListItems.splice(i,1);break;}
+    }
+    localStorage.setItem("cards",JSON.stringify(wishListItems));
+    setIsInWishList(false);
+  }
   return (
     <div className={style.popupBox}>
       <div className={style.box}>
@@ -79,12 +116,18 @@ const PopUp = ({ closeFunc, product }) => {
                 +
               </button>
               <button className={style.buttonContent}>Add to cart</button>
-              <button className={style.buttonContent}>Add To WishList</button>
+              <button
+                className={style.buttonContent}
+                onClick={() => isInWishList ? removeWishListItem():addWishListItem()}
+              >
+                {isInWishList ? "remove from WishList" : "Add To WishList"}
+              </button>
             </section>
-            
-            <button className={`${style.wishList} ${style.buttonContent}`}>View Full Product Details</button>
+
+            <button className={`${style.wishList} ${style.buttonContent}`}>
+              View Full Product Details
+            </button>
           </section>
-          
         </div>
       </div>
     </div>
