@@ -30,7 +30,7 @@ const HomePage = () => {
   return (
     <div>
       <AdBar />
-      <NavBar changed={open} />
+      <NavBar changed={open}  />
       <HeaderIntro />
       {open && <PopUp closeFunc={openToggle} product={product} />}
       <Title Text={"Featured"} />

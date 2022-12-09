@@ -1,9 +1,14 @@
-import React, { useState} from "react";
+import React, { useState } from "react";
 import style from "./style.module.css";
 import ActiveButtons from "../ActiveButtons";
+import { Link } from "react-router-dom";
 const PopUp = ({ closeFunc, product }) => {
   const [num, setNumber] = useState(1);
-  const [selectedPicture, setSelectedPicture] = useState(product.images[0].startsWith("http") ? product.images[0]: `/images/${product.images[0]}`);
+  const [selectedPicture, setSelectedPicture] = useState(
+    product.images[0].startsWith("http")
+      ? product.images[0]
+      : `/images/${product.images[0]}`
+  );
   const wishListItems = JSON.parse(localStorage.getItem("cards")) || [];
   const check = () => {
     for (let i = 0; i < wishListItems.length; i++) {
@@ -19,28 +24,31 @@ const PopUp = ({ closeFunc, product }) => {
     return false;
   };
   const [isInWishList, setIsInWishList] = useState(check());
-  
+
   const addWishListItem = (e) => {
-      wishListItems.push({
-        price: product.price,
-        title: product.title,
-        rating: product.rating,
-      });
-      localStorage.setItem("cards", JSON.stringify(wishListItems));
-      setIsInWishList(true);
-    }
-  const removeWishListItem = ()=>{
-    for(let i = 0; i < wishListItems.length; i++){
+    wishListItems.push({
+      price: product.price,
+      title: product.title,
+      rating: product.rating,
+    });
+    localStorage.setItem("cards", JSON.stringify(wishListItems));
+    setIsInWishList(true);
+  };
+  const removeWishListItem = () => {
+    for (let i = 0; i < wishListItems.length; i++) {
       if (
         wishListItems[i].rating +
           wishListItems[i].title +
           wishListItems[i].price ===
         product.rating + product.title + product.price
-      ){wishListItems.splice(i,1);break;}
+      ) {
+        wishListItems.splice(i, 1);
+        break;
+      }
     }
-    localStorage.setItem("cards",JSON.stringify(wishListItems));
+    localStorage.setItem("cards", JSON.stringify(wishListItems));
     setIsInWishList(false);
-  }
+  };
   return (
     <div className={style.popupBox}>
       <div className={style.box}>
@@ -52,8 +60,12 @@ const PopUp = ({ closeFunc, product }) => {
           <section className={style.imageContainer}>
             {product.images.map((source, idx) => (
               <img
-                onClick={(e) => setSelectedPicture(source.startsWith("http") ? source : `/images/${source}`)}
-                src={ source.startsWith("http") ? source : `/images/${source}`}
+                onClick={(e) =>
+                  setSelectedPicture(
+                    source.startsWith("http") ? source : `/images/${source}`
+                  )
+                }
+                src={source.startsWith("http") ? source : `/images/${source}`}
                 key={idx}
                 alt="Product Pictures"
               />
@@ -118,15 +130,19 @@ const PopUp = ({ closeFunc, product }) => {
               <button className={style.buttonContent}>Add to cart</button>
               <button
                 className={style.buttonContent}
-                onClick={() => isInWishList ? removeWishListItem():addWishListItem()}
+                onClick={() =>
+                  isInWishList ? removeWishListItem() : addWishListItem()
+                }
               >
                 {isInWishList ? "remove from WishList" : "Add To WishList"}
               </button>
             </section>
 
-            <button className={`${style.wishList} ${style.buttonContent}`}>
+            <a href={`/products/${product.id}`}>
+              <button className={`${style.wishList} ${style.buttonContent}`}>
               View Full Product Details
             </button>
+            </a>
           </section>
         </div>
       </div>

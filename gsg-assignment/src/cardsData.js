@@ -1,5 +1,6 @@
 const cardsFeatured = [
   {
+    id:21,
     imgPath: "img14.png",
     title: "Dress",
     isNew: true,
@@ -18,6 +19,7 @@ const cardsFeatured = [
     ],
   },
   {
+    id:22,
     imgPath: "img2.png",
     title: "Dress",
     isNew: true,
@@ -36,6 +38,7 @@ const cardsFeatured = [
     ],
   },
   {
+    id:23,
     imgPath: "img3.png",
     title: "Dress",
     isNew: true,
@@ -54,6 +57,7 @@ const cardsFeatured = [
     ],
   },
   {
+    id:24,
     imgPath: "img.png",
     title: "Dress",
     isNew: false,
@@ -72,6 +76,7 @@ const cardsFeatured = [
     ],
   },
   {
+    id:25,
     imgPath: "img4.png",
     title: "Dress",
     isNew: true,
@@ -90,6 +95,7 @@ const cardsFeatured = [
     ],
   },
   {
+    id:26,
     imgPath: "img6.png",
     title: "Dress",
     isNew: false,
@@ -108,6 +114,7 @@ const cardsFeatured = [
     ],
   },
   {
+    id:27,
     imgPath: "img7.png",
     title: "Dress",
     isNew: true,
@@ -126,6 +133,7 @@ const cardsFeatured = [
     ],
   },
   {
+    id:28,
     imgPath: "img8.png",
     title: "Dress",
     isNew: false,

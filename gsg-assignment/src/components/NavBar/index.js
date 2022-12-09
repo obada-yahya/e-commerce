@@ -19,7 +19,7 @@ const styleSS = {
   boxShadow: 24,
   p: 4,
 };
-const NavBar = ({ changed }) => {
+const NavBar = ({ changed ,funcChange}) => {
   useEffect(()=>{
     setItems(JSON.parse(localStorage.getItem("cards")));
   },[changed])
@@ -43,6 +43,7 @@ const NavBar = ({ changed }) => {
     }
     localStorage.setItem("cards",JSON.stringify(items));
     setItems([...items]);
+    funcChange();
   }
   return (
     <>
