@@ -10,36 +10,29 @@ import GridExplore from "../../components/GridExplore";
 import Button from "../../components/SharedComponents/Button";
 import Sponsors from "../../components/Sponsors";
 import PopUp from "../../components/PopUp";
-import products from "../../productsData";
-const cardsFeatured = [
-  { imgPath: "img14.png", isNew: true, "assets":true,price:120},
-  { imgPath: "img2.png", isNew: true, "assets":true ,price:120},
-  { imgPath: "img3.png", isNew: true, "assets":true ,price:250},
-  { imgPath: "img.png", isNew: false, "assets":true ,price:220},
-  { imgPath: "img4.png", isNew: true, "assets":true ,price:310},
-  { imgPath: "img6.png", isNew: false, "assets":true ,price:220},
-  { imgPath: "img7.png", isNew: true, "assets":true ,price:150},
-  { imgPath: "img8.png", isNew: false, "assets":true,price:180},
-];
-const cardsShop = [
-  { imgPath: "img11.png", isNew: false, category: "Pants", "assets":true},
-  { imgPath: "img9.png", isNew: false, category: "Jumpsuits", "assets":true},
-  { imgPath: "img12.png", isNew: false, category: "Tops" , "assets":true},
-  { imgPath: "img13.png", isNew: false, category: "Accessories", "assets":true},
-];
+import cardsFeatured from "../../cardsData";
+import cardsShop from "../../cardsShop";
 const videos = ["rec1.png", "rec2.png", "rec3.png"];
-
 const HomePage = () => {
-    const [open, setToggle] = useState(false);
-    const openToggle = (e) => {
-      setToggle(!open);
-    };
-   return (
-    <div >
+  const [open, setToggle] = useState(false);
+  const [product, setProduct] = useState(null);
+  const openToggle = (e, card) => {
+    let html = document.querySelector("html");
+    if (!open) {
+      html.style.height = "100%";
+      html.style.overflow = "hidden";
+    } else {
+      html.style = "";
+    }
+    setToggle(!open);
+    setProduct(card);
+  };
+  return (
+    <div>
       <AdBar />
-      <NavBar changed={open}/>
+      <NavBar changed={open} />
       <HeaderIntro />
-      {open && <PopUp closeFunc={openToggle} product={products[1]}/>}
+      {open && <PopUp closeFunc={openToggle} product={product} />}
       <Title Text={"Featured"} />
       <Gallery
         cards={cardsFeatured}
@@ -67,8 +60,8 @@ const HomePage = () => {
       <Title Text={"As Seen on"} />
       <Sponsors />
       <Footer />
-    </div>  
-  )
-}
+    </div>
+  );
+};
 
-export default HomePage
+export default HomePage;

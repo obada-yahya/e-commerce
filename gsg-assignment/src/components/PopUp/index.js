@@ -3,7 +3,7 @@ import style from "./style.module.css";
 import ActiveButtons from "../ActiveButtons";
 const PopUp = ({ closeFunc, product }) => {
   const [num, setNumber] = useState(1);
-  const [selectedPicture, setSelectedPicture] = useState(product.images[0]);
+  const [selectedPicture, setSelectedPicture] = useState(product.images[0].startsWith("http") ? product.images[0]: `/images/${product.images[0]}`);
   const wishListItems = JSON.parse(localStorage.getItem("cards")) || [];
   const check = () => {
     for (let i = 0; i < wishListItems.length; i++) {
@@ -52,8 +52,8 @@ const PopUp = ({ closeFunc, product }) => {
           <section className={style.imageContainer}>
             {product.images.map((source, idx) => (
               <img
-                onClick={(e) => setSelectedPicture(source)}
-                src={source}
+                onClick={(e) => setSelectedPicture(source.startsWith("http") ? source : `/images/${source}`)}
+                src={ source.startsWith("http") ? source : `/images/${source}`}
                 key={idx}
                 alt="Product Pictures"
               />

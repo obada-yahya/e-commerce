@@ -5,6 +5,9 @@ import WishListItem from "../WishListItem";
 import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import Avatar from '@mui/material/Avatar';
+import { pink } from "@mui/material/colors";
+import { useCookies} from "react-cookie";
 const styleSS = {
   position: "absolute",
   top: "50%",
@@ -22,8 +25,13 @@ const NavBar = ({ changed }) => {
   },[changed])
   const [items, setItems] = useState(JSON.parse(localStorage.getItem("cards")));
   const [open, setOpen] = useState(false);
+  const [cookie,setCookie, removeCookie] = useCookies();
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
+  const logout = ()=>{
+    removeCookie("token");
+    removeCookie("name");
+  }
   const deleteItem = (item)=>{
     for (let i = 0; i < items.length; i++) {
       if (
@@ -47,7 +55,7 @@ const NavBar = ({ changed }) => {
           <a href="#">about</a>
         </div>
         <div className={style.loginItems}>
-          <a href="/login">login</a>
+          {!!cookie.name ? <><Avatar sx={{ bgcolor: pink[500] }} onClick={logout}>{cookie.name[0]}</Avatar> </>:<a href="/login">login</a> }
           <i className="fa-solid fa-magnifying-glass"></i>
           <i
             className={`fa-regular fa-heart ` + style.wishlist}

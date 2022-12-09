@@ -7,8 +7,8 @@ const Card = ({card,isNew,isShop,func}) => {
       {
         isNew == true ? <div className={style.newIcon}>New</div>: <></>
       }
-      <img onClick={func ? ()=>func(): null} className={style.middleImg} src={'/ButtonImages/Button/Primary/M.png'}/>
-      {card.category ? <div className={style.category}>{card.category}</div> : <></>}
+      <img onClick={func ? (e)=>func(e,card): null} className={style.middleImg} src={'/ButtonImages/Button/Primary/M.png'}/>
+      {card.category && isShop? <div className={style.category}>{card.category}</div> : <></>}
       {
         !isShop ?
         <>
