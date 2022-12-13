@@ -40,9 +40,19 @@
     align-items: center;
 }
 
-.wishlist {
+.wishlist,.cartList{
     position: relative;
     cursor: pointer;
+}
+.cartList span{
+    padding: 2px;
+    border-radius: 50%;
+    background-color: blue;
+    color: white;
+    position:absolute;
+    font-size:10px;
+    bottom:-10px;
+    right:-10px
 }
 .wishlist span{
     padding: 2px;

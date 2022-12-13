@@ -26,3 +26,12 @@
     line-height: 20px;
     text-transform: uppercase;
 }
+
+@media(max-width:500px){
+    .Content a{
+        margin: 20px 220px 0 0;
+    }
+    .Content h1{
+        margin:100px 0 50px 0 ;
+    }
+}

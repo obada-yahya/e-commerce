@@ -5,6 +5,7 @@ import FilterSubItem from "../FilterSubItem";
 import ActiveButtons from "../ActiveButtons";
 import FilterGallery from "../SharedComponents/FilterGallery";
 import SortingMenu from "../SortingMenu";
+// import myData from "../../cardsData"
 const myData = [
   {
     imgPath: "img14.png",
@@ -156,7 +157,7 @@ const Filter = () => {
           <ActiveButtons />
           <div>SEE OUR SIZING GUIDE</div>
         </section>
-        <FilterGallery cards={filteredCards} />
+        <FilterGallery cards={filteredCards}/>
       </div>
     </>
   );
