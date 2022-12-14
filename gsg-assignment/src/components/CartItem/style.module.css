@@ -1,0 +1,23 @@
+.table{
+    display: grid;
+    grid-template-columns: 180px 100px 100px 120px;
+    grid-template-rows: auto;
+}
+.quantity{
+    display: flex;
+    justify-content: space-between;
+}
+.incBtn{
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    width: 30px;
+    height: 30px;
+    background-color: #DEDEDE;
+    border: 1px solid #DEDEDE;
+    font-size:15px;
+    text-align: center;
+    box-sizing: border-box;
+  }

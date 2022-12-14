@@ -8,35 +8,56 @@ import CartBar from "../CartBar";
 import WishListBar from "../WishListBar";
 const NavBar = ({ changed, funcChange }) => {
   useEffect(() => {
-    setItems(JSON.parse(localStorage.getItem("cards")));
+    setWishListItems(JSON.parse(localStorage.getItem("cards")));
+    setCartListItems(JSON.parse(localStorage.getItem("Cart")));
   }, [changed]);
-  const [items, setItems] = useState(JSON.parse(localStorage.getItem("cards")));
+
   // wishList state and functions
+  const [wishListItems, setWishListItems] = useState(
+    JSON.parse(localStorage.getItem("cards"))
+  );
   const [openWishList, setOpenWishList] = useState(false);
   const handleOpenWishList = () => setOpenWishList(true);
   const handleCloseWishList = () => setOpenWishList(false);
+  const deleteWishListItem = (itemId) => {
+    for (let i = 0; i < wishListItems.length; i++) {
+      if (wishListItems[i].id === itemId) {
+        wishListItems.splice(i, 1);
+        break;
+      }
+    }
+    localStorage.setItem("cards", JSON.stringify(wishListItems));
+    setWishListItems([...wishListItems]);
+    funcChange();
+  };
 
-  // carts state and functions
+  // cart state and functions
+  const [cartListItems, setCartListItems] = useState(
+    JSON.parse(localStorage.getItem("Cart"))
+  );
   const [openCartList, setOpenCartList] = useState(false);
   const handleOpenCartList = () => setOpenCartList(true);
   const handleCloseCartList = () => setOpenCartList(false);
+  const deleteCartListItem = (itemId) => {
+    console.log("hello");
+    console.log(itemId);
+    for (let i = 0; i < cartListItems.length; i++) {
+      if (cartListItems[i].id === itemId) {
+        cartListItems.splice(i, 1);
+        break;
+      }
+    }
+    localStorage.setItem("Cart", JSON.stringify(cartListItems));
+    setCartListItems([...cartListItems]);
+    funcChange();
+  };
 
   const [cookie, setCookie, removeCookie] = useCookies();
   const logout = () => {
     removeCookie("token");
     removeCookie("name");
   };
-  const deleteItem = (item) => {
-    for (let i = 0; i < items.length; i++) {
-      if (items[i].rating + items[i].title + items[i].price === item) {
-        items.splice(i, 1);
-        break;
-      }
-    }
-    localStorage.setItem("cards", JSON.stringify(items));
-    setItems([...items]);
-    funcChange();
-  };
+
   return (
     <>
       <nav className={style.navigation}>
@@ -44,8 +65,8 @@ const NavBar = ({ changed, funcChange }) => {
           <a href="/">matter</a>
           <a href="/shop">shop</a>
           <a href="/product">fabric</a>
-          <a href="#">journal</a>
-          <a href="#">about</a>
+          <a href="/">journal</a>
+          <a href="/">about</a>
         </div>
         <div className={style.loginItems}>
           {!!cookie.name ? (
@@ -62,28 +83,36 @@ const NavBar = ({ changed, funcChange }) => {
             className={`fa-regular fa-heart ` + style.wishlist}
             onClick={handleOpenWishList}
           >
-            {items?.length > 0 ? <span>{items.length}</span> : <></>}
+            {wishListItems?.length > 0 ? (
+              <span>{wishListItems.length}</span>
+            ) : (
+              <></>
+            )}
           </i>
           <i
             className={`fa-solid fa-bag-shopping ` + style.cartList}
             onClick={handleOpenCartList}
           >
-            {items?.length > 0 ? <span>{items.length}</span> : <></>}
+            {cartListItems?.length > 0 ? (
+              <span>{cartListItems.length}</span>
+            ) : (
+              <></>
+            )}
           </i>
         </div>
       </nav>
       <div>
         <WishListBar
-          items={items}
+          items={wishListItems}
           open={openWishList}
           handleClose={handleCloseWishList}
-          deleteItem={deleteItem}
+          deleteItem={deleteWishListItem}
         />
         <CartBar
-          items={items}
+          items={cartListItems}
           open={openCartList}
           handleClose={handleCloseCartList}
-          deleteItem={deleteItem}
+          deleteItem={deleteCartListItem}
         />
       </div>
     </>

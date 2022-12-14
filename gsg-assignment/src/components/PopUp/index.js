@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import style from "./style.module.css";
 import ActiveButtons from "../ActiveButtons";
-import { Link } from "react-router-dom";
 const PopUp = ({ closeFunc, product }) => {
   const [num, setNumber] = useState(1);
   const [selectedPicture, setSelectedPicture] = useState(
@@ -9,39 +8,62 @@ const PopUp = ({ closeFunc, product }) => {
       ? product.images[0]
       : `/images/${product.images[0]}`
   );
-  const wishListItems = JSON.parse(localStorage.getItem("cards")) || [];
-  const check = () => {
-    for (let i = 0; i < wishListItems.length; i++) {
-      if (
-        wishListItems[i].rating +
-          wishListItems[i].title +
-          wishListItems[i].price ===
-        product.rating + product.title + product.price
-      ) {
-        return true;
-      }
+  // cartList functions and data
+  const cartListItems = JSON.parse(localStorage.getItem("Cart")) || [];
+  const checkCartListItem = () => {
+    for (let i = 0; i < cartListItems.length; i++) {
+      if (cartListItems[i].id === product.id) return true;
     }
     return false;
   };
-  const [isInWishList, setIsInWishList] = useState(check());
+  const [isInCartList, setIsInCartList] = useState(checkCartListItem());
+
+  const addCartListItem = (e) => {
+    cartListItems.push({
+      price: product.price,
+      title: product.title,
+      rating: product.rating,
+      id: product.id,
+      quantity: num,
+    });
+    localStorage.setItem("Cart", JSON.stringify(cartListItems));
+    setIsInCartList(true);
+  };
+  const removeCartListItem = () => {
+    for (let i = 0; i < cartListItems.length; i++) {
+      if (cartListItems[i].id === product.id) {
+        cartListItems.splice(i, 1);
+        break;
+      }
+    }
+    localStorage.setItem("Cart", JSON.stringify(cartListItems));
+    setIsInCartList(false);
+  };
+  // end of cartList functions and data
+
+  // wishList functions and data
+  const wishListItems = JSON.parse(localStorage.getItem("cards")) || [];
+  const checkWishListItem = () => {
+    for (let i = 0; i < wishListItems.length; i++) {
+      if (wishListItems.id === product.id) return true;
+    }
+    return false;
+  };
+  const [isInWishList, setIsInWishList] = useState(checkWishListItem());
 
   const addWishListItem = (e) => {
     wishListItems.push({
       price: product.price,
       title: product.title,
       rating: product.rating,
+      id: product.id,
     });
     localStorage.setItem("cards", JSON.stringify(wishListItems));
     setIsInWishList(true);
   };
   const removeWishListItem = () => {
     for (let i = 0; i < wishListItems.length; i++) {
-      if (
-        wishListItems[i].rating +
-          wishListItems[i].title +
-          wishListItems[i].price ===
-        product.rating + product.title + product.price
-      ) {
+      if (wishListItems[i].id === product.id) {
         wishListItems.splice(i, 1);
         break;
       }
@@ -49,6 +71,7 @@ const PopUp = ({ closeFunc, product }) => {
     localStorage.setItem("cards", JSON.stringify(wishListItems));
     setIsInWishList(false);
   };
+  // end of the wishlist functions and data
   return (
     <div className={style.popupBox}>
       <div className={style.box}>
@@ -127,7 +150,14 @@ const PopUp = ({ closeFunc, product }) => {
               >
                 +
               </button>
-              <button className={style.buttonContent}>Add to cart</button>
+              <button
+                className={style.buttonContent}
+                onClick={() => {
+                  isInCartList ? removeCartListItem() : addCartListItem();
+                }}
+              >
+                {isInCartList ? "Remove from Cart" : "Add to Cart"}
+              </button>
               <button
                 className={style.buttonContent}
                 onClick={() =>
@@ -140,8 +170,8 @@ const PopUp = ({ closeFunc, product }) => {
 
             <a href={`/products/${product.id}`}>
               <button className={`${style.wishList} ${style.buttonContent}`}>
-              View Full Product Details
-            </button>
+                View Full Product Details
+              </button>
             </a>
           </section>
         </div>

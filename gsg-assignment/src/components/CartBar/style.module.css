@@ -1,0 +1,19 @@
+.container{
+   padding:0; 
+}
+.container li{
+    list-style-type: none;
+}
+.table{
+    display: flex;
+    flex-direction: column;
+}
+.header{
+    display: grid;
+    grid-template-columns: 180px 100px 100px 120px;
+    grid-template-rows: auto;
+}
+
+.center{
+    text-align: center;
+}
