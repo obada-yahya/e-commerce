@@ -6,7 +6,10 @@ import { pink } from "@mui/material/colors";
 import { useCookies } from "react-cookie";
 import CartBar from "../CartBar";
 import WishListBar from "../WishListBar";
-const NavBar = ({ changed, funcChange }) => {
+import LogOutDialog from "../../components/LogOutDialog";
+
+const NavBar = ({ changed, removeWishListItem, removeCartListItem }) => {
+  const [open, setOpen] = React.useState(false);
   useEffect(() => {
     setWishListItems(JSON.parse(localStorage.getItem("cards")));
     setCartListItems(JSON.parse(localStorage.getItem("Cart")));
@@ -28,8 +31,7 @@ const NavBar = ({ changed, funcChange }) => {
     }
     localStorage.setItem("cards", JSON.stringify(wishListItems));
     setWishListItems([...wishListItems]);
-    if(!!funcChange)
-    funcChange();
+    if (!!removeWishListItem) removeWishListItem();
   };
 
   // cart state and functions
@@ -41,15 +43,14 @@ const NavBar = ({ changed, funcChange }) => {
   const handleCloseCartList = () => setOpenCartList(false);
   const deleteCartListItem = (itemId) => {
     for (let i = 0; i < cartListItems.length; i++) {
-      if (cartListItems[i].id === itemId) {
+      if (cartListItems[i].id == itemId) {
         cartListItems.splice(i, 1);
         break;
       }
     }
     localStorage.setItem("Cart", JSON.stringify(cartListItems));
     setCartListItems([...cartListItems]);
-    if(!!funcChange)
-    funcChange();
+    if (!!removeCartListItem) removeCartListItem();
   };
 
   const [cookie, setCookie, removeCookie] = useCookies();
@@ -71,9 +72,10 @@ const NavBar = ({ changed, funcChange }) => {
         <div className={style.loginItems}>
           {!!cookie.name ? (
             <>
-              <Avatar sx={{ bgcolor: pink[500] }} onClick={logout}>
+            <LogOutDialog open={open} setOpen={setOpen} logout={logout}/>
+              <Avatar sx={{ bgcolor: pink[500] }} onClick={()=>setOpen(true)}>
                 {cookie.name[0]}
-              </Avatar>{" "}
+              </Avatar>
             </>
           ) : (
             <a href="/login">login</a>

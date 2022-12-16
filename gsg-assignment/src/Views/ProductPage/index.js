@@ -118,7 +118,7 @@ const ProductPage = () => {
   return (
     <>
       <AdBar />
-      <NavBar changed={changed} funcChange={removeWishListItem} />
+      <NavBar changed={changed} removeWishListItem={removeWishListItem}  removeCartListItem={removeCartListItem}/>
       <div className={style.popupBox}>
         <div className={style.box}>
           {product.title}

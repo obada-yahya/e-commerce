@@ -1,12 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import axios from "axios";
-import { useEffect, useState } from "react";
 import { useCookies } from "react-cookie";
-import style from "./style.module.css";
-import { Navigate, redirect } from "react-router-dom";
-function LoginPage() {
-  const [formData, setFormData] = useState({});
+import { Navigate } from "react-router-dom";
+import Avatar from "@mui/material/Avatar";
+import Button from "@mui/material/Button";
+import CssBaseline from "@mui/material/CssBaseline";
+import TextField from "@mui/material/TextField";
+import Paper from "@mui/material/Paper";
+import Box from "@mui/material/Box";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+
+const theme = createTheme();
+
+export default function SignInSide() {
   const [cookies, setCookie] = useCookies([]);
+  const [formData, setFormData] = useState({});
   const handleUserNameChange = (e) => {
     setFormData({ ...formData, username: e.target.value });
   };
@@ -25,61 +35,83 @@ function LoginPage() {
     window.location.reload();
   };
   if (!!cookies.name) return <Navigate to="/" />;
-  else
-    return (
-      <>
-        <section className={`${style.def} ${style.bgg}`}>
-          <div className={style.container}>
-            <div className={style.screen}>
-              <div className={style.screenContent}>
-                <form className={style.login}>
-                  <div className={style.loginField}>
-                    <i className={`${style.login__icon} ${style.fas}`}></i>
-                    <input
-                      type="text"
-                      value={formData.username}
-                      className={style.login__input}
-                      onChange={handleUserNameChange}
-                      placeholder="User name"
-                    />
-                  </div>
-                  <div className={style.login__field}>
-                    <i className={`${style.login__icon} ${style.fas}`}></i>
-                    <input
-                      type="password"
-                      value={formData.password}
-                      className={style.login__input}
-                      onChange={handlePasswordChange}
-                      placeholder="Password"
-                    />
-                  </div>
-                  <button
-                    className={`${style.button} ${style.login__submit}`}
-                    onClick={handleSubmit}
-                  >
-                    <span className={style.button__text}>Log In Now</span>
-                    <i className={`${style.button__icon} ${style.fas}`}></i>
-                  </button>
-                </form>
-              </div>
-              <div className={style.screen__background}>
-                <span
-                  className={`${style.screen__background__shape} ${style.screen__background__shape4}`}
-                ></span>
-                <span
-                  className={`${style.screen__background__shape} ${style.screen__background__shape3}`}
-                ></span>
-                <span
-                  className={`${style.screen__background__shape} ${style.screen__background__shape2}`}
-                ></span>
-                <span
-                  className={`${style.screen__background__shape} ${style.screen__background__shape1}`}
-                ></span>
-              </div>
-            </div>
-          </div>
-        </section>
-      </>
-    );
+
+  return (
+    <ThemeProvider theme={theme}>
+      <Grid container component="main" sx={{ height: "100vh" }}>
+        <CssBaseline />
+        <Grid
+          item
+          xs={false}
+          sm={4}
+          md={7}
+          sx={{
+            backgroundImage:
+              "url(https://images.unsplash.com/photo-1490750967868-88aa4486c946?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80)",
+            backgroundRepeat: "no-repeat",
+            backgroundColor: (t) =>
+              t.palette.mode === "light"
+                ? t.palette.grey[50]
+                : t.palette.grey[900],
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+          }}
+        />
+        <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
+          <Box
+            sx={{
+              my: 8,
+              mx: 4,
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
+          >
+            <Avatar sx={{ m: 1, bgcolor: "secondary.main" }}></Avatar>
+            <Typography component="h1" variant="h5">
+              Sign in
+            </Typography>
+            <Box
+              component="form"
+              noValidate
+              onSubmit={handleSubmit}
+              sx={{ mt: 1 }}
+            >
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                id="username"
+                label="Username"
+                name="username"
+                autoComplete="username"
+                onChange={handleUserNameChange}
+                autoFocus
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="password"
+                label="Password"
+                type="password"
+                id="password"
+                onChange={handlePasswordChange}
+                autoComplete="current-password"
+              />
+
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Sign In
+              </Button>
+            </Box>
+          </Box>
+        </Grid>
+      </Grid>
+    </ThemeProvider>
+  );
 }
-export default LoginPage;
