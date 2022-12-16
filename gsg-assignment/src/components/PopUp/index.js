@@ -12,7 +12,7 @@ const PopUp = ({ closeFunc, product }) => {
   const cartListItems = JSON.parse(localStorage.getItem("Cart")) || [];
   const checkCartListItem = () => {
     for (let i = 0; i < cartListItems.length; i++) {
-      if (cartListItems[i].id === product.id) return true;
+      if (cartListItems[i].id == product.id) return true;
     }
     return false;
   };
@@ -31,7 +31,7 @@ const PopUp = ({ closeFunc, product }) => {
   };
   const removeCartListItem = () => {
     for (let i = 0; i < cartListItems.length; i++) {
-      if (cartListItems[i].id === product.id) {
+      if (cartListItems[i].id == product.id) {
         cartListItems.splice(i, 1);
         break;
       }
@@ -45,7 +45,7 @@ const PopUp = ({ closeFunc, product }) => {
   const wishListItems = JSON.parse(localStorage.getItem("cards")) || [];
   const checkWishListItem = () => {
     for (let i = 0; i < wishListItems.length; i++) {
-      if (wishListItems.id === product.id) return true;
+      if (wishListItems[i].id == product.id) return true;
     }
     return false;
   };
@@ -63,7 +63,7 @@ const PopUp = ({ closeFunc, product }) => {
   };
   const removeWishListItem = () => {
     for (let i = 0; i < wishListItems.length; i++) {
-      if (wishListItems[i].id === product.id) {
+      if (wishListItems[i].id == product.id) {
         wishListItems.splice(i, 1);
         break;
       }
@@ -168,7 +168,7 @@ const PopUp = ({ closeFunc, product }) => {
               </button>
             </section>
 
-            <a href={`/products/${product.id}`}>
+            <a href={`/products/${product.id}`} className={style.link}>
               <button className={`${style.wishList} ${style.buttonContent}`}>
                 View Full Product Details
               </button>

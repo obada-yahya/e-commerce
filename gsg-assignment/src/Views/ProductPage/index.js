@@ -31,8 +31,8 @@ const ProductPage = () => {
   }, []);
 
   const handleEffect = (data) => {
-    let pd = -1;
-    for (let i = 0; i < data.length; i++) {
+    let pd = 0;
+    for (let i = 1; i < data.length; i++) {
       if (data[i].id == productId) {
         pd = i;
         break;
@@ -45,27 +45,59 @@ const ProductPage = () => {
     );
     setProduct(data[pd]);
   };
-  // starts from here
+
+  // cartItems
+  const cartListItems = JSON.parse(localStorage.getItem("Cart")) || [];
+  const checkCartListItem = () => {
+    for (let i = 0; i < cartListItems.length; i++) {
+      if (cartListItems[i].id == productId) return true;
+    }
+    return false;
+  };
+  const [isInCartList, setIsInCartList] = useState(checkCartListItem());
+
+  const addCartListItem = (e) => {
+    cartListItems.push({
+      price: product.price,
+      title: product.title,
+      rating: product.rating,
+      id: productId,
+      quantity: num,
+    });
+    localStorage.setItem("Cart", JSON.stringify(cartListItems));
+    setIsInCartList(true);
+    setChanged(!changed);
+  };
+
+  const removeCartListItem = () => {
+    for (let i = 0; i < cartListItems.length; i++) {
+      if (cartListItems[i].id == productId) {
+        cartListItems.splice(i, 1);
+        break;
+      }
+    }
+    localStorage.setItem("Cart", JSON.stringify(cartListItems));
+    setIsInCartList(false);
+    setChanged(!changed);
+  };
+
+  // wishList
   const wishListItems = JSON.parse(localStorage.getItem("cards")) || [];
-  const check = () => {
+  const checkWishListItem = () => {
     for (let i = 0; i < wishListItems.length; i++) {
-      if (
-        wishListItems[i].rating +
-          wishListItems[i].title +
-          wishListItems[i].price ===
-        product.rating + product.title + product.price
-      ) {
+      if (wishListItems[i].id == productId) {
         return true;
       }
     }
     return false;
   };
-  const [isInWishList, setIsInWishList] = useState(check());
+  const [isInWishList, setIsInWishList] = useState(checkWishListItem());
   const addWishListItem = (e) => {
     wishListItems.push({
       price: product.price,
       title: product.title,
       rating: product.rating,
+      id: productId,
     });
     localStorage.setItem("cards", JSON.stringify(wishListItems));
     setIsInWishList(true);
@@ -73,12 +105,7 @@ const ProductPage = () => {
   };
   const removeWishListItem = () => {
     for (let i = 0; i < wishListItems.length; i++) {
-      if (
-        wishListItems[i].rating +
-          wishListItems[i].title +
-          wishListItems[i].price ===
-        product.rating + product.title + product.price
-      ) {
+      if (wishListItems[i].id == productId) {
         wishListItems.splice(i, 1);
         break;
       }
@@ -166,7 +193,14 @@ const ProductPage = () => {
                 >
                   +
                 </button>
-                <button className={style.buttonContent}>Add to cart</button>
+                <button
+                  className={style.buttonContent}
+                  onClick={() => {
+                    isInCartList ? removeCartListItem() : addCartListItem();
+                  }}
+                >
+                  {isInCartList ? "Remove from Cart" : "Add to Cart"}
+                </button>
                 <button
                   className={style.buttonContent}
                   onClick={() =>

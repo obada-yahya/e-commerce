@@ -21,13 +21,14 @@ const NavBar = ({ changed, funcChange }) => {
   const handleCloseWishList = () => setOpenWishList(false);
   const deleteWishListItem = (itemId) => {
     for (let i = 0; i < wishListItems.length; i++) {
-      if (wishListItems[i].id === itemId) {
+      if (wishListItems[i].id == itemId) {
         wishListItems.splice(i, 1);
         break;
       }
     }
     localStorage.setItem("cards", JSON.stringify(wishListItems));
     setWishListItems([...wishListItems]);
+    if(!!funcChange)
     funcChange();
   };
 
@@ -39,8 +40,6 @@ const NavBar = ({ changed, funcChange }) => {
   const handleOpenCartList = () => setOpenCartList(true);
   const handleCloseCartList = () => setOpenCartList(false);
   const deleteCartListItem = (itemId) => {
-    console.log("hello");
-    console.log(itemId);
     for (let i = 0; i < cartListItems.length; i++) {
       if (cartListItems[i].id === itemId) {
         cartListItems.splice(i, 1);
@@ -49,6 +48,7 @@ const NavBar = ({ changed, funcChange }) => {
     }
     localStorage.setItem("Cart", JSON.stringify(cartListItems));
     setCartListItems([...cartListItems]);
+    if(!!funcChange)
     funcChange();
   };
 
